@@ -10,6 +10,16 @@
         "link-name": "off"
       }
     ],
+    "disown-opener": "off",
+    "no-inline-styles": "off",
+    "compat-api/html": [
+      "default",
+      {
+        "ignore": [
+          "iframe[referrerpolicy=no-referrer-when-downgrade]"
+        ]
+      }
+    ],
     "compat-api/css": [
       "default",
       {
@@ -17,7 +27,6 @@
           "backdrop-filter"
         ]
       }
-    ],
-    "disown-opener": "off"
+    ]
   }
 }
