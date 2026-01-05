@@ -796,9 +796,14 @@ h1, h2, h3, h4 {
     grid-template-columns: 1fr;
   }
 
+  
   .footer-content {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  .footer-column {
+    align-items: center;
   }
 
   .footer-title::after {
@@ -806,7 +811,19 @@ h1, h2, h3, h4 {
     transform: translateX(-50%);
   }
 
+  .social-links {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .footer-links {
+    padding-left: 0; 
+    text-align: center;
+    width: 100%;
+  }
+
   .footer-contact p {
     justify-content: center;
   }
+
 }
