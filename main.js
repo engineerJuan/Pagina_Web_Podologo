@@ -2,36 +2,81 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
   const navLinks = document.querySelectorAll('.nav-link');
-  const header = document.querySelector('.header');
-
-  menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    const icon = menuToggle.querySelector('i');
-    if (navMenu.classList.contains('active')) {
-      icon.classList.remove('fa-bars');
-      icon.classList.add('fa-times');
-    } else {
-      icon.classList.remove('fa-times');
-      icon.classList.add('fa-bars');
-    }
-  });
+  
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const icon = menuToggle.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+      }
+    });
+  }
 
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-      const icon = menuToggle.querySelector('i');
-      icon.classList.remove('fa-times');
-      icon.classList.add('fa-bars');
+      if (navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        const icon = menuToggle.querySelector('i');
+        if (icon) {
+          icon.classList.add('fa-bars');
+          icon.classList.remove('fa-times');
+        }
+      }
     });
   });
 
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const revealElements = document.querySelectorAll('.service-card, .section-header, .hero-text, .faq-item, .info-card');
+  revealElements.forEach(el => el.classList.add('reveal'));
 
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: "0px 0px -40px 0px"
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    question.addEventListener('click', () => {
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item && otherItem.classList.contains('active')) {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.faq-answer').style.maxHeight = null;
+        }
+      });
+
+      item.classList.toggle('active');
+      if (item.classList.contains('active')) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      } else {
+        answer.style.maxHeight = null;
+      }
+    });
+  });
+
+  const header = document.querySelector('.header');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.style.boxShadow = "0 2px 15px rgba(0,0,0,0.1)";
+    if (window.scrollY > 20) {
+      header.style.boxShadow = "0 4px 20px rgba(45, 71, 57, 0.08)";
+      header.style.padding = "10px 0";
     } else {
       header.style.boxShadow = "none";
+      header.style.padding = "20px 0";
     }
   });
+  
+  const yearElement = document.getElementById('currentYear');
+  if(yearElement) yearElement.textContent = new Date().getFullYear();
 });
