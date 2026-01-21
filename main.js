@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
   const navLinks = document.querySelectorAll('.nav-link');
-  
+
   if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
@@ -27,6 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  document.addEventListener('click', (e) => {
+    if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      navMenu.classList.remove('active');
+      const icon = menuToggle.querySelector('i');
+      if (icon) {
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+      }
+    }
+  });
+
   const revealElements = document.querySelectorAll('.service-card, .section-header, .hero-text, .faq-item, .info-card');
   revealElements.forEach(el => el.classList.add('reveal'));
 
@@ -44,28 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
-  const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
-
-    question.addEventListener('click', () => {
-      faqItems.forEach(otherItem => {
-        if (otherItem !== item && otherItem.classList.contains('active')) {
-          otherItem.classList.remove('active');
-          otherItem.querySelector('.faq-answer').style.maxHeight = null;
-        }
-      });
-
-      item.classList.toggle('active');
-      if (item.classList.contains('active')) {
-        answer.style.maxHeight = answer.scrollHeight + "px";
-      } else {
-        answer.style.maxHeight = null;
-      }
-    });
-  });
-
   const header = document.querySelector('.header');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
@@ -73,10 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
       header.style.padding = "10px 0";
     } else {
       header.style.boxShadow = "none";
-      header.style.padding = "20px 0";
+      header.style.padding = "15px 0";
     }
   });
-  
+
   const yearElement = document.getElementById('currentYear');
-  if(yearElement) yearElement.textContent = new Date().getFullYear();
+  if (yearElement) yearElement.textContent = new Date().getFullYear();
 });

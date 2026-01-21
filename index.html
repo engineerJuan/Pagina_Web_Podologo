@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Clínica Podológica de la Dra. Laura Escobar Miranda. Tratamientos avanzados y cuidado integral del pie.">
+  <meta name="description" content="Clínica Podológica. Tratamientos avanzados y cuidado integral del pie.">
   <meta name="theme-color" content="#2d4739">
-  <title>Clínica Podológica Dra. Laura Escobar Miranda</title>
+  <title>Clínica Podológica - Dr. en Podología</title>
+  
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <header class="header">
-    <div class="container">
+    <div class="container header-container">
       <div class="logo-container">
-        <h1 class="logo"><span class="logo-accent">Dra.</span> LAURA ESCOBAR</h1>
+        <h1 class="logo"><span class="logo-accent">Dr.</span> en Podología</h1>
         <p class="logo-subtitle">Podología Clínica Avanzada</p>
       </div>
       
-      <button class="menu-toggle" id="menuToggle">
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
         <i class="fas fa-bars"></i>
       </button>
       
@@ -37,8 +39,9 @@
       <div class="hero-text">
         <h2 class="hero-title">Tu <span class="highlight">bienestar</span> empieza desde los pies</h2>
         <p class="hero-subtitle">Especialista en podología clínica con más de 10 años de experiencia. Cuidamos de tu salud con tecnología de vanguardia y protocolos médicos estandarizados.</p>
+        
         <div class="hero-buttons">
-          <a href="#ubicacion" class="btn btn-primary">Ver ubicación<i class="fas fa-calendar-check"></i></a>
+          <a href="#ubicacion" class="btn btn-primary">Ver ubicación <i class="fas fa-calendar-check"></i></a>
           <a href="#servicios" class="btn btn-secondary">Tratamientos <i class="fas fa-chevron-right"></i></a>
         </div>
       </div>
@@ -69,24 +72,20 @@
       
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-notes-medical"></i>
-          </div>
+          <div class="service-icon"><i class="fas fa-notes-medical"></i></div>
           <h3 class="service-title">Consulta Diagnóstica</h3>
-          <p class="service-description">Valoración clínica detallada que incluye anamnesis, revisión vascular periférica y dermatológica para un diagnóstico certero.</p>
+          <p class="service-description">Valoración clínica detallada que incluye anamnesis, revisión vascular periférica y dermatológica.</p>
           <ul class="service-features">
             <li><i class="fas fa-check"></i> Historial Clínico Digital</li>
             <li><i class="fas fa-check"></i> Exploración Física Completa</li>
-            <li><i class="fas fa-check"></i> Plan Terapéutico Personalizado</li>
+            <li><i class="fas fa-check"></i> Plan Terapéutico</li>
           </ul>
         </div>
         
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-feather-alt"></i>
-          </div>
+          <div class="service-icon"><i class="fas fa-feather-alt"></i></div>
           <h3 class="service-title">Uñas Encarnadas</h3>
-          <p class="service-description">Tratamiento definitivo de la onicocriptosis. Realizamos espiculotomías con técnica estéril para alivio inmediato.</p>
+          <p class="service-description">Tratamiento definitivo de la onicocriptosis. Realizamos espiculotomías con técnica estéril.</p>
           <ul class="service-features">
             <li><i class="fas fa-check"></i> Procedimiento Indoloro</li>
             <li><i class="fas fa-check"></i> Prevención de Recidivas</li>
@@ -95,11 +94,9 @@
         </div>
         
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-spa"></i>
-          </div>
+          <div class="service-icon"><i class="fas fa-spa"></i></div>
           <h3 class="service-title">Quiropodia Clínica</h3>
-          <p class="service-description">Deslaminado profesional de hiperqueratosis (callosidades) y helomas. Corte anatómico y fresado terapéutico.</p>
+          <p class="service-description">Deslaminado profesional de hiperqueratosis (callosidades) y helomas. Corte anatómico.</p>
           <ul class="service-features">
             <li><i class="fas fa-check"></i> Instrumental Estéril</li>
             <li><i class="fas fa-check"></i> Descarga de Presiones</li>
@@ -108,80 +105,35 @@
         </div>
         
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-virus-slash"></i>
-          </div>
+          <div class="service-icon"><i class="fas fa-virus-slash"></i></div>
           <h3 class="service-title">Onicomicosis</h3>
-          <p class="service-description">Protocolo antimicótico combinado. Limpieza mecánica profunda de la lámina ungueal y terapias tópicas.</p>
+          <p class="service-description">Protocolo antimicótico combinado. Limpieza mecánica profunda de la lámina ungueal.</p>
           <ul class="service-features">
             <li><i class="fas fa-check"></i> Recuperación de la Uña</li>
             <li><i class="fas fa-check"></i> Seguimiento Mensual</li>
-            <li><i class="fas fa-check"></i> Cultivo Micológico (si requiere)</li>
+            <li><i class="fas fa-check"></i> Cultivo Micológico</li>
           </ul>
         </div>
         
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-user-shield"></i>
-          </div>
+          <div class="service-icon"><i class="fas fa-user-shield"></i></div>
           <h3 class="service-title">Pie Diabético</h3>
-          <p class="service-description">Protocolo clínico de alta seguridad para el pie de riesgo. Monitoreo periódico para evitar complicaciones.</p>
+          <p class="service-description">Protocolo clínico de alta seguridad para el pie de riesgo. Monitoreo periódico.</p>
           <ul class="service-features">
             <li><i class="fas fa-check"></i> Evaluación Neuro-Vascular</li>
             <li><i class="fas fa-check"></i> Prevención de Úlceras</li>
-            <li><i class="fas fa-check"></i> Educación para el Autocuidado</li>
+            <li><i class="fas fa-check"></i> Educación Autocuidado</li>
           </ul>
         </div>
         
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-shoe-prints"></i>
-          </div>
+          <div class="service-icon"><i class="fas fa-shoe-prints"></i></div>
           <h3 class="service-title">Ortopodología</h3>
-          <p class="service-description">Diseño de órtesis plantares (plantillas) personalizadas mediante estudio biomecánico para corregir la marcha.</p>
+          <p class="service-description">Diseño de órtesis plantares (plantillas) personalizadas mediante estudio biomecánico.</p>
           <ul class="service-features">
             <li><i class="fas fa-check"></i> Materiales Termoconformables</li>
             <li><i class="fas fa-check"></i> Corrección de Ejes</li>
-            <li><i class="fas fa-check"></i> Adaptación a tu Calzado</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-running"></i>
-          </div>
-          <h3 class="service-title">Podología Deportiva</h3>
-          <p class="service-description">Análisis del gesto deportivo para maximizar el rendimiento y prevenir lesiones por sobrecarga.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Estudio de la Carrera</li>
-            <li><i class="fas fa-check"></i> Descarga Muscular</li>
-            <li><i class="fas fa-check"></i> Vendaje Neuromuscular</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-child"></i>
-          </div>
-          <h3 class="service-title">Podología Pediátrica</h3>
-          <p class="service-description">Monitoreo del desarrollo biomecánico infantil. Detección temprana y corrección de alteraciones en la marcha.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Trato Amable y Paciente</li>
-            <li><i class="fas fa-check"></i> Guía de Calzado Infantil</li>
-            <li><i class="fas fa-check"></i> Evolución de la Pisada</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-shield-virus"></i>
-          </div>
-          <h3 class="service-title">Verrugas Plantares</h3>
-          <p class="service-description">Erradicación clínica de papilomas (VPH). Tratamientos mediante cauterización controlada y segura.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Eliminación de Raíz</li>
-            <li><i class="fas fa-check"></i> Evita el Contagio</li>
-            <li><i class="fas fa-check"></i> Cicatrización Rápida</li>
+            <li><i class="fas fa-check"></i> Adaptación a Calzado</li>
           </ul>
         </div>
       </div>
@@ -210,9 +162,7 @@
         
         <div class="direccion-info">
           <div class="info-card">
-            <div class="info-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
             <div class="info-text">
               <h4>Dirección</h4>
               <p>De Las Americas 211, Américas Cárdenas, 50130 Toluca de Lerdo, Méx.</p>
@@ -220,9 +170,7 @@
           </div>
           
           <div class="info-card">
-            <div class="info-icon">
-              <i class="fas fa-clock"></i>
-            </div>
+            <div class="info-icon"><i class="fas fa-clock"></i></div>
             <div class="info-text">
               <h4>Horario de Atención</h4>
               <p>Lun - Vie: 9:00 AM - 8:00 PM</p>
@@ -232,9 +180,7 @@
           </div>
           
           <div class="info-card">
-            <div class="info-icon">
-              <i class="fas fa-car"></i>
-            </div>
+            <div class="info-icon"><i class="fas fa-car"></i></div>
             <div class="info-text">
               <h4>Estacionamiento</h4>
               <p>Contamos con lugares exclusivos para pacientes frente a la clínica.</p>
@@ -248,15 +194,16 @@
   <footer class="footer" id="datos-contacto">
     <div class="container">
       <div class="footer-content">
+        
         <div class="footer-column">
-          <h3 class="footer-logo">Dra. <span>LAURA ESCOBAR</span></h3>
+          <h3 class="footer-logo">Dra. <span>en Podología</span></h3>
           <p class="footer-description">
             Clínica especializada en podología integral. Comprometidos con la excelencia médica y la calidad de vida de nuestros pacientes.
           </p>
           <div class="social-links">
             <a href="https://facebook.com" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
             <a href="https://instagram.com" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/527223322063" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/525555555555" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
         
@@ -285,25 +232,23 @@
           <h4 class="footer-title">Contacto</h4>
           <div class="footer-contact">
             <p><i class="fas fa-map-marker-alt"></i> Toluca, Estado de México</p>
-            <p><i class="fas fa-phone-alt"></i> +52 722 332 2063</p>
-            <p><i class="fas fa-envelope"></i> dralauraescobar@gmail.com</p>
+            <p><i class="fas fa-phone-alt"></i> +52 5555 55 55 55</p>
+            <p><i class="fas fa-envelope"></i> drpedologo@gmail.com</p>
             <p><i class="fas fa-clock"></i> Cita Previa Requerida</p>
           </div>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p>© <span id="currentYear">2026</span> Dra. Laura Escobar Miranda. Todos los derechos reservados.</p>
+        <p>© <span id="currentYear">2026</span> Dr. en Podología. Todos los derechos reservados.</p>
         <p>
-          <a href="docs/aviso-privacidad.pdf" target="_blank" rel="noopener noreferrer">
-             Aviso de Privacidad
-          </a>
+          <a href="docs/aviso-privacidad.pdf" target="_blank" rel="noopener noreferrer">Aviso de Privacidad</a>
         </p>
       </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/527223322063" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/525555555555" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
     <i class="fab fa-whatsapp"></i>
   </a>
 
