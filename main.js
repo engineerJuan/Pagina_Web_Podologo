@@ -4,12 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link');
 
   if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       navMenu.classList.toggle('active');
+      
       const icon = menuToggle.querySelector('i');
       if (icon) {
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
+        if (navMenu.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
       }
     });
   }
@@ -19,9 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
         const icon = menuToggle.querySelector('i');
-        if (icon) {
-          icon.classList.add('fa-bars');
+        if(icon) {
           icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
         }
       }
     });
@@ -31,14 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
       navMenu.classList.remove('active');
       const icon = menuToggle.querySelector('i');
-      if (icon) {
-        icon.classList.add('fa-bars');
+      if(icon) {
         icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
       }
     }
   });
 
-  const revealElements = document.querySelectorAll('.service-card, .section-header, .hero-text, .faq-item, .info-card');
+  const revealElements = document.querySelectorAll('.service-card, .section-header, .hero-text, .info-card');
   revealElements.forEach(el => el.classList.add('reveal'));
 
   const revealObserver = new IntersectionObserver((entries) => {
@@ -48,10 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.1,
-    rootMargin: "0px 0px -40px 0px"
-  });
+  }, { threshold: 0.1 });
 
   revealElements.forEach(el => revealObserver.observe(el));
 
@@ -67,5 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const yearElement = document.getElementById('currentYear');
-  if (yearElement) yearElement.textContent = new Date().getFullYear();
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
 });
