@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Clínica Podológica. Tratamientos avanzados y cuidado integral del pie.">
+  <meta name="theme-color" content="#2d4739">
+  <title>Clínica Podológica - Dr. en Podología</title>
+  <link rel="stylesheet" href="../Css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo-container">
+        <a href="#inicio" style="text-decoration: none;">
+            <h1 class="logo"><span class="logo-accent">Dr.</span> en Podología</h1>
+            <p class="logo-subtitle">Podología Clínica Avanzada</p>
+        </a>
+      </div>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav class="nav-menu" id="navMenu">
+        <a href="#inicio" class="nav-link active">Inicio</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#ubicacion" class="nav-link">Ubicación</a>
+        <a href="#datos-contacto" class="nav-link">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h2 class="hero-title">Tu <span class="highlight">bienestar</span> empieza desde los pies</h2>
+        <p class="hero-subtitle">Especialista en podología clínica con más de 10 años de experiencia. Cuidamos de tu salud con tecnología de vanguardia y protocolos médicos estandarizados.</p>
+        <div class="hero-buttons">
+          <a href="#ubicacion" class="btn btn-primary">Ver ubicación <i class="fas fa-calendar-check"></i></a>
+          <a href="#servicios" class="btn btn-secondary">Tratamientos <i class="fas fa-chevron-right"></i></a>
+        </div>
+      </div>
+      
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Años de Experiencia</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1000+</div>
+          <div class="stat-label">Pacientes Atendidos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Satisfacción</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Servicios <span class="title-accent">Especializados</span></h2>
+        <p class="section-subtitle">Soluciones podológicas integrales con enfoque médico y tecnología de punta.</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-notes-medical"></i>
+          </div>
+          <h3 class="service-title">Consulta Diagnóstica</h3>
+          <p class="service-description">Valoración clínica detallada que incluye anamnesis, revisión vascular periférica y dermatológica.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Historial Clínico Digital</li>
+            <li><i class="fas fa-check"></i> Exploración Física Completa</li>
+            <li><i class="fas fa-check"></i> Plan Terapéutico</li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-feather-alt"></i>
+          </div>
+          <h3 class="service-title">Uñas Encarnadas</h3>
+          <p class="service-description">Tratamiento definitivo de la onicocriptosis. Realizamos espiculotomías con técnica estéril para alivio inmediato.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Procedimiento Indoloro</li>
+            <li><i class="fas fa-check"></i> Prevención de Recidivas</li>
+            <li><i class="fas fa-check"></i> Recuperación Estética</li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-spa"></i>
+          </div>
+          <h3 class="service-title">Quiropodia Clínica</h3>
+          <p class="service-description">Deslaminado profesional de hiperqueratosis (callosidades) y helomas. Corte anatómico y fresado terapéutico.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Instrumental Estéril</li>
+            <li><i class="fas fa-check"></i> Descarga de Presiones</li>
+            <li><i class="fas fa-check"></i> Hidratación Profunda</li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-virus-slash"></i>
+          </div>
+          <h3 class="service-title">Onicomicosis</h3>
+          <p class="service-description">Protocolo antimicótico combinado. Limpieza mecánica profunda de la lámina ungueal y terapias tópicas.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Recuperación de la Uña</li>
+            <li><i class="fas fa-check"></i> Seguimiento Mensual</li>
+            <li><i class="fas fa-check"></i> Cultivo Micológico</li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-user-shield"></i>
+          </div>
+          <h3 class="service-title">Pie Diabético</h3>
+          <p class="service-description">Protocolo clínico de alta seguridad para el pie de riesgo. Monitoreo periódico para evitar complicaciones.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Evaluación Neuro-Vascular</li>
+            <li><i class="fas fa-check"></i> Prevención de Úlceras</li>
+            <li><i class="fas fa-check"></i> Educación Autocuidado</li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-shoe-prints"></i>
+          </div>
+          <h3 class="service-title">Ortopodología</h3>
+          <p class="service-description">Diseño de órtesis plantares (plantillas) personalizadas mediante estudio biomecánico para corregir la marcha.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Materiales Termoconformables</li>
+            <li><i class="fas fa-check"></i> Corrección de Ejes</li>
+            <li><i class="fas fa-check"></i> Adaptación a Calzado</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ubicacion" id="ubicacion">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nuestra <span class="title-accent">Ubicación</span></h2>
+        <p class="section-subtitle">Instalaciones sanitizadas y de fácil acceso en Toluca</p>
+      </div>
+      
+      <div class="ubicacion-content">
+        <div class="mapa-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d332.87129133878085!2d-99.64853252409391!3d19.281985348647375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8991741b5edf%3A0xdf7d947a7a0dd9dc!2sPedicuristas%20de%20Toluca!5e0!3m2!1ses!2smx!4v1764726381807!5m2!1ses!2smx" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            title="Ubicación de la Clínica Podológica">
+          </iframe>
+        </div>
+        
+        <div class="direccion-info">
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info-text">
+              <h4>Dirección</h4>
+              <p>Dirección Prototipo, Ciudad de México, México.</p>
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="info-text">
+              <h4>Horario de Atención</h4>
+              <p>Lun - Vie: 9:00 AM - 8:00 PM</p>
+              <p>Sáb: 9:00 AM - 2:00 PM</p>
+              <p class="info-note">Domingo: Cerrado</p>
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="info-text">
+              <h4>Contacto</h4>
+              <p>Tel: +55 55 55 66 44</p>
+              <p>Email: Concecionarios@gmaik.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="datos-contacto">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3 class="footer-logo">Dr. <span>en Podología</span></h3>
+          <p class="footer-description">
+            Clínica especializada en podología integral. Comprometidos con la excelencia médica y la calidad de vida de nuestros pacientes.
+          </p>
+          <div class="social-links">
+            <a href="https://facebook.com" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4 class="footer-title">Servicios</h4>
+          <ul class="footer-links">
+            <li><a href="#servicios">Consulta Diagnóstica</a></li>
+            <li><a href="#servicios">Uñas Encarnadas</a></li>
+            <li><a href="#servicios">Quiropodia</a></li>
+            <li><a href="#servicios">Pie Diabético</a></li>
+            <li><a href="#servicios">Plantillas</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4 class="footer-title">Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+            <li><a href="#datos-contacto">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4 class="footer-title">Contacto</h4>
+          <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt"></i> Ciudad de México, México</p>
+            <p><i class="fas fa-phone-alt"></i> +55 55 55 66 44</p>
+            <p><i class="fas fa-envelope"></i> Concecionarios@gmaik.com</p>
+            <p><i class="fas fa-clock"></i> Cita Previa Requerida</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© <span id="currentYear">2026</span> Dr. en Podología. Todos los derechos reservados.</p>
+        <p>
+          <a href="../Docs/aviso-privacidad.pdf" target="_blank" rel="noopener noreferrer">Aviso de Privacidad</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/525555556644" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="../Js/main.js"></script>
+</body>
+</html>
