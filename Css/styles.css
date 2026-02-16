@@ -1,4 +1,4 @@
-/*  VARIABLES GLOBALES Y CONFIGURACIÓN */
+/* VARIABLES GLOBALES Y CONFIGURACIÓN */
 :root {
   --primary-color: #2d4739;
   --primary-light: #527e6e;
@@ -155,7 +155,7 @@ h1, h2, h3, h4 {
   background-color: var(--primary-light);
 }
 
-/* SECCIÓN HERO (BANNER PRINCIPAL)  */
+/* SECCIÓN HERO (BANNER PRINCIPAL) */
 .hero {
   background: linear-gradient(rgba(45, 71, 57, 0.8), rgba(45, 71, 57, 0.6)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1920');
   background-size: cover;
@@ -647,190 +647,33 @@ h1, h2, h3, h4 {
   background-color: #128c7e;
 }
 
-/* AJUSTES PARA TABLETS (HASTA 992PX) */
+/* RESPONSIVE DESIGN */
 @media (max-width: 992px) {
-  /* TÍTULO DE SECCIÓN REDUCIDO */
-  .section-title {
-    font-size: 2.2rem;
-  }
-  /* TÍTULO HERO REDUCIDO */
-  .hero-title {
-    font-size: 2.8rem;
-  }
-  /* UBICACIÓN EN UNA SOLA COLUMNA */
-  .about-content,
-  .ubicacion-content {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
+  .section-title { font-size: 2.2rem; }
+  .hero-title { font-size: 2.8rem; }
+  .ubicacion-content { grid-template-columns: 1fr; gap: 40px; }
 }
 
-/* AJUSTES PARA MÓVILES (HASTA 768PX) */
 @media (max-width: 768px) {
-  /* MOSTRAR EL BOTÓN HAMBURGUESA */
-  .menu-toggle {
-    display: block;
-    z-index: 1000000;
-  }
-
-  /* MENÚ LATERAL DESPLEGABLE */
+  .menu-toggle { display: block; z-index: 1000000; }
   .nav-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 280px;
-    height: 100vh;
-    background-color: var(--white);
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 80px;
-    gap: 0;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-    transform: translateX(100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 99999;
+    position: fixed; top: 0; right: 0; width: 280px; height: 100vh;
+    background-color: var(--white); flex-direction: column; padding-top: 80px;
+    transform: translateX(100%); opacity: 0; visibility: hidden; transition: all 0.3s ease;
   }
-
-  /* ESTADO CUANDO EL MENÚ ESTÁ ABIERTO */
-  .nav-menu.active {
-    transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  /* FONDO OSCURO DETRÁS DEL MENÚ ABIERTO */
-  .nav-menu.active::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    right: 280px;
-    width: 100vw;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: -1;
-  }
-
-  /* LINKS DEL MENÚ EN VERSIÓN MÓVIL */
-  .nav-link {
-    padding: 20px 30px;
-    width: 100%;
-    text-align: left;
-    border-bottom: 1px solid var(--gray);
-  }
-
-  /* AJUSTE DE ALTURA DEL HERO EN MÓVIL */
-  .hero {
-    min-height: 50vh;
-    padding-top: 100px;
-    padding-bottom: 40px;
-    margin-top: 0;
-    background-position: center bottom;
-  }
-
-  /* PADDING PARA CONTENIDO HERO MÓVIL */
-  .hero-content {
-    padding-top: 20px;
-  }
-
-  /* MARGEN TEXTO HERO MÓVIL */
-  .hero-text {
-    margin-bottom: 30px;
-  }
-
-  /* TÍTULO HERO MÓVIL REDUCIDO */
-  .hero-title {
-    font-size: 2.2rem;
-    line-height: 1.3;
-    margin-bottom: 15px;
-  }
-
-  /* AJUSTE DE GRUPO DE ESTADÍSTICAS MÓVIL */
-  .hero-stats {
-    gap: 15px;
-    margin-top: 20px;
-  }
-
-  /* ESTADÍSTICAS INDIVIDUALES MÓVIL */
-  .stat-card {
-    min-width: 100px;
-    padding: 15px;
-    flex: 1;
-  }
-
-  /* BOTÓN WHATSAPP MÓVIL REDIMENSIONADO */
-  .whatsapp-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 28px;
-    bottom: 20px;
-    right: 20px;
-  }
-
-  /* CONTENIDO DEL FOOTER CENTRADO EN MÓVIL */
-  .footer-content {
-    text-align: center;
-  }
-
-  /* COLUMNAS DEL FOOTER CENTRADAS */
-  .footer-column {
-    align-items: center;
-  }
-
-  /* LÍNEA DE TÍTULO FOOTER CENTRADA */
-  .footer-title::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  /* REDES SOCIALES CENTRADAS EN MÓVIL */
-  .social-links {
-    justify-content: center;
-  }
-
-  /* QUITAR PADDING DE LINKS EN MÓVIL */
-  .footer-links {
-    padding: 0;
-    text-align: center;
-  }
-
-  /* ICONOS DE CONTACTO CENTRADOS */
-  .footer-contact p {
-    justify-content: center;
-  }
+  .nav-menu.active { transform: translateX(0); opacity: 1; visibility: visible; }
+  .hero-title { font-size: 2.2rem; }
+  .whatsapp-btn { width: 50px; height: 50px; font-size: 28px; bottom: 20px; right: 20px; }
 }
 
-/* AJUSTES PARA MÓVILES MUY PEQUEÑOS (HASTA 576PX) */
-@media (max-width: 576px) {
-  /* MENOS PADDING EN SECCIONES */
-  .section {
-    padding: 60px 0;
-  }
-  /* TÍTULO DE SECCIÓN PEQUEÑO */
-  .section-title {
-    font-size: 1.8rem;
-  }
-  /* TÍTULO HERO PEQUEÑO */
-  .hero-title {
-    font-size: 2rem;
-  }
-  /* BOTONES HERO EN COLUMNA (UNO SOBRE OTRO) */
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  /* ANCHO COMPLETO PARA BOTONES HERO MÓVIL */
-  .hero-buttons .btn {
-    width: 100%;
-    max-width: 300px;
-  }
-  /* SERVICIOS EN UNA SOLA FILA */
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-  /* FOOTER EN UNA SOLA COLUMNA */
-  .footer-content {
-    grid-template-columns: 1fr;
-  }
+/* CLASES PARA ANIMACIONES (REVEAL) */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
