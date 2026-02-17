@@ -1,12 +1,11 @@
-/* INICIO DEL SCRIPT AL CARGAR EL DOM */
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* --- VARIABLES DE ELEMENTOS DEL DOM --- */
+    /* INICIO DEL SCRIPT AL CARGAR EL DOM */
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    /* --- LÓGICA DE APERTURA Y CIERRE DEL MENÚ MÓVIL --- */
+    /* LÓGICA DE APERTURA Y CIERRE DEL MENÚ MÓVIL */
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* --- CERRAR MENÚ AL SELECCIONAR UNA SECCIÓN --- */
+    /* CERRAR MENÚ AL SELECCIONAR UNA SECCIÓN */
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navMenu.classList.contains('active')) {
@@ -39,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* --- CERRAR MENÚ AL HACER CLIC FUERA DE ÉL --- */
+    /* CERRAR MENÚ AL HACER CLIC FUERA DE ÉL */
     document.addEventListener('click', (e) => {
         if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
             navMenu.classList.remove('active');
@@ -51,11 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    /* --- PREPARACIÓN DE ELEMENTOS PARA ANIMACIÓN REVEAL --- */
+    /* PREPARACIÓN DE ELEMENTOS PARA ANIMACIÓN REVEAL */
     const revealElements = document.querySelectorAll('.service-card, .section-header, .hero-text, .info-card');
     revealElements.forEach(el => el.classList.add('reveal'));
 
-    /* --- CONFIGURACIÓN DEL OBSERVADOR DE INTERSECCIÓN --- */
+    /* CONFIGURACIÓN DEL OBSERVADOR DE INTERSECCIÓN */
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -67,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    /* --- EFECTOS VISUALES DEL HEADER AL HACER SCROLL --- */
+    /* EFECTOS VISUALES DEL HEADER AL HACER SCROLL */
     const header = document.querySelector('.header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 20) {
@@ -79,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    /* --- ACTUALIZACIÓN AUTOMÁTICA DEL AÑO EN EL FOOTER --- */
+    /* ACTUALIZACIÓN AUTOMÁTICA DEL AÑO EN EL FOOTER */
     const yearElement = document.getElementById('currentYear');
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
