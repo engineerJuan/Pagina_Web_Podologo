@@ -1,1 +1,12 @@
+# --- EDITORES (Privacidad de tu entorno) ---
+.vscode/
 .hintrc
+
+# --- SEGURIDAD Y CREDENCIALES (Protección de datos) ---
+.env
+credentials.json
+*.sql
+
+# --- ARCHIVOS DE SISTEMA (Basura de Windows) ---
+Thumbs.db
+desktop.ini
