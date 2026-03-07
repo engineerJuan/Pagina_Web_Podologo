@@ -1,86 +1,78 @@
-document.addEventListener('DOMContentLoaded', () => {
+// Menú hamburguesa para móviles
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+const navLinks = document.querySelectorAll('.nav-link');
 
-    /* INICIO DEL SCRIPT AL CARGAR EL DOM */
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    /* LÓGICA DE APERTURA Y CIERRE DEL MENÚ MÓVIL */
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            navMenu.classList.toggle('active');
-            
-            const icon = menuToggle.querySelector('i');
-            if (icon) {
-                if (navMenu.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            }
-        });
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    // Cambiar ícono entre bars y times
+    const icon = menuToggle.querySelector('i');
+    if (navMenu.classList.contains('active')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
     }
+  });
+}
 
-    /* CERRAR MENÚ AL SELECCIONAR UNA SECCIÓN */
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                const icon = menuToggle.querySelector('i');
-                if(icon) {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            }
-        });
-    });
-
-    /* CERRAR MENÚ AL HACER CLIC FUERA DE ÉL */
-    document.addEventListener('click', (e) => {
-        if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-            navMenu.classList.remove('active');
-            const icon = menuToggle.querySelector('i');
-            if(icon) {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        }
-    });
-
-    /* PREPARACIÓN DE ELEMENTOS PARA ANIMACIÓN REVEAL */
-    const revealElements = document.querySelectorAll('.service-card, .section-header, .hero-text, .info-card');
-    revealElements.forEach(el => el.classList.add('reveal'));
-
-    /* CONFIGURACIÓN DEL OBSERVADOR DE INTERSECCIÓN */
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    /* EFECTOS VISUALES DEL HEADER AL HACER SCROLL */
-    const header = document.querySelector('.header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
-            header.style.boxShadow = "0 4px 20px rgba(45, 71, 57, 0.15)";
-            header.style.padding = "10px 0";
-        } else {
-            header.style.boxShadow = "0 5px 15px rgba(0, 0, 0, 0.08)";
-            header.style.padding = "15px 0";
-        }
-    });
-
-    /* ACTUALIZACIÓN AUTOMÁTICA DEL AÑO EN EL FOOTER */
-    const yearElement = document.getElementById('currentYear');
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-    }
+// Cerrar menú al hacer clic en un enlace
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+    const icon = menuToggle.querySelector('i');
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+  });
 });
+
+// Resaltar enlace activo al hacer scroll
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section');
+  const scrollY = window.pageYOffset;
+
+  sections.forEach(section => {
+    const sectionHeight = section.offsetHeight;
+    const sectionTop = section.offsetTop - 100;
+    const sectionId = section.getAttribute('id');
+    
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${sectionId}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+});
+
+// Animación reveal al hacer scroll
+function reveal() {
+  const reveals = document.querySelectorAll('.reveal');
+  
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const revealTop = reveals[i].getBoundingClientRect().top;
+    const revealPoint = 150;
+    
+    if (revealTop < windowHeight - revealPoint) {
+      reveals[i].classList.add('active');
+    } else {
+      reveals[i].classList.remove('active');
+    }
+  }
+}
+
+window.addEventListener('scroll', reveal);
+// Añadir clase reveal a elementos que queremos animar (por ejemplo, service-card)
+document.querySelectorAll('.service-card, .info-card, .section-header').forEach(el => {
+  el.classList.add('reveal');
+});
+// Ejecutar una vez al cargar para mostrar elementos visibles inicialmente
+reveal();
+
+// Año actual en el footer
+document.getElementById('currentYear').textContent = new Date().getFullYear();
